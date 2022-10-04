@@ -37,8 +37,16 @@ class Employee
     @salary
   end
 
+  def active
+    @active
+  end
+
+  def active=(new_value)
+    @active = new_value
+  end
+
   def print_info
-    puts "#{@first_name} #{@last_name} makes #{@salary} a year."
+    puts "#{first_name} #{last_name} makes #{salary} a year."
   end
 
   def give_annual_raise
@@ -54,3 +62,11 @@ employee_2 = Employee.new('Ryan', 'Kuhns', 80000, true)
 puts employee_1.first_name
 puts employee_1.last_name
 puts employee_1.salary
+
+
+employee_1.print_info
+employee_2.print_info
+
+puts employee_1.active
+employee_1.active = true
+puts employee_1.active

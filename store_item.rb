@@ -1,12 +1,4 @@
-# item_1 = {name: 'red pepper', color: 'red', price: 1}
-# item_2 = {:name => 'onion', :color => 'white', :price => 2}
-# item_3 = {name: 'chips', color: 'yellow', price: 5}
 
-# # p item_1
-# # p item_2
-# # p item_3
-
-# puts "Item 1 is a #{item_1[:name]} and is #{item_1[:color]} with a price of #{item_1[:price]} dollar(s)."
 
 class Item
   attr_reader :name, :color, :price
@@ -20,27 +12,44 @@ class Item
 
 end
 
-item_1 = Item.new(
+class Food < Item
+  def initialize(input_options)
+    super
+    @shelf_life = input_options[:shelf_life]
+  end
+end
+
+item_1 = Food.new(
                   name: 'Red pepper', 
                   color: 'Red', 
-                  price: 1
+                  price: 1,
+                  shelf_life: 1
                   )
 
-item_2 = Item.new(
+item_2 = Food.new(
                   name: 'Onion', 
                   color: 'White', 
-                  price: 2
+                  price: 2,
+                  shelf_life: 5
                   )
 
-item_3 = Item.new(
+item_3 = Food.new(
                   name: 'Potato Chips', 
                   color: 'Yellow', 
-                  price: 5
+                  price: 5,
+                  shelf_life: 36
+                  )
+
+item_4 = Item.new(
+                  name: 'Scissors', 
+                  color: 'Black', 
+                  price: 10
                   )
 
 p item_1
 p item_2
 p item_3
+p item_4
 
 puts "#{item_1.name} is the color #{item_1.color} and costs #{item_1.price} dollar(s)."
 puts "#{item_2.name} is the color #{item_2.color} and costs #{item_2.price} dollar(s)."

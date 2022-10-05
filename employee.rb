@@ -23,6 +23,11 @@ end
 
 class Manager < Employee
 
+  def initialize(input_options)
+    super
+    @employees = input_options[:employees]
+  end
+
   def send_report
     puts "Sending email..."
     puts "Email sent"
@@ -48,7 +53,8 @@ manager = Manager.new(
                           first_name: 'Ryan', 
                           last_name: 'Kuhns', 
                           salary: 100000, 
-                          active: true
+                          active: true,
+                          employees: [employee_1, employee_2]
                           )
 
 
@@ -56,9 +62,13 @@ employee_1.print_info
 employee_2.print_info
 manager.print_info
 
+p employee_1
+p employee_2
+p manager
 
-puts employee_1.active
-employee_1.active = true
-puts employee_1.active
 
-manager.send_report
+# puts employee_1.active
+# employee_1.active = true
+# puts employee_1.active
+
+# manager.send_report

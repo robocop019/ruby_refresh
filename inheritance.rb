@@ -1,5 +1,5 @@
 class Vehicle
-  def initialize
+  def initialize(input_options)
     @speed = 0
     @direction = 'north'
   end
@@ -20,11 +20,11 @@ end
 
 class Car < Vehicle
 
-  def initialize
+  def initialize(input_options)
     super
-    @make = 'Nissan'
-    @model = 'Rogue'
-    @fuel = 30
+    @make = input_options[:make]
+    @model = input_options[:model]
+    @fuel = input_options[:fuel]
   end
 
   def honk_horn
@@ -33,12 +33,11 @@ class Car < Vehicle
 end
 
 class Bike < Vehicle
-
-  def initialize
+  def initialize(input_options)
     super
-    @make = 'Swchinn'
-    @type = 'Moutain'
-    @weight = 5
+    @make = input_options[:make]
+    @type = input_options[:type]
+    @weight = input_options[:weight]
   end
 
   def ring_bell
@@ -46,8 +45,8 @@ class Bike < Vehicle
   end
 end
 
-car = Car.new
-bike = Bike.new
+car = Car.new(make: 'Nissan', model: 'Rogue', fuel: 30)
+bike = Bike.new(make: 'Schwinn', type: 'Mountain', weight: 5)
 
 p car
 p bike

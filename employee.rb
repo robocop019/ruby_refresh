@@ -17,6 +17,8 @@
 
 
 class Employee
+  attr_reader :first_name, :last_name, :salary, :active
+  attr_writer :active
 
   def initialize(first_name, last_name, salary, active)
     @first_name = first_name
@@ -25,25 +27,25 @@ class Employee
     @active = active
   end
 
-  def first_name
-    @first_name
-  end
+  # def first_name
+  #   @first_name
+  # end
 
-  def last_name
-    @last_name
-  end
+  # def last_name
+  #   @last_name
+  # end
 
-  def salary
-    @salary
-  end
+  # def salary
+  #   @salary
+  # end
 
-  def active
-    @active
-  end
+  # def active
+  #   @active
+  # end
 
-  def active=(new_value)
-    @active = new_value
-  end
+  # def active=(new_value)
+  #   @active = new_value
+  # end
 
   def print_info
     puts "#{first_name} #{last_name} makes #{salary} a year."

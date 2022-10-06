@@ -1,28 +1,28 @@
 require './item.rb'
 require './food.rb'
 
-item_1 = Food.new(
+item_1 = StoreFront::Food.new(
                   name: 'Red pepper', 
                   color: 'Red', 
                   price: 1,
                   shelf_life: 1
                   )
 
-item_2 = Food.new(
+item_2 = StoreFront::Food.new(
                   name: 'Onion', 
                   color: 'White', 
                   price: 2,
                   shelf_life: 5
                   )
 
-item_3 = Food.new(
+item_3 = StoreFront::Food.new(
                   name: 'Potato Chips', 
                   color: 'Yellow', 
                   price: 5,
                   shelf_life: 36
                   )
 
-item_4 = Item.new(
+item_4 = StoreFront::Item.new(
                   name: 'Scissors', 
                   color: 'Black', 
                   price: 10

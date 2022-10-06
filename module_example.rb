@@ -12,26 +12,23 @@ module Driveable
   end
 end
 
-class Car
-  include Driveable
-
+class Vehicle 
   def initialize
     @speed = 0
     @direction = 'north'
   end
+end
+
+class Car < Vehicle
+  include Driveable
 
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
-class Bike
+class Bike < Vehicle
   include Driveable
-
-  def initialize
-    @speed = 0
-    @direction = 'north'
-  end
 
   def ring_bell
     puts "Ring ring!"

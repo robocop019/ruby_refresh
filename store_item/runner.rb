@@ -1,23 +1,5 @@
-
-
-class Item
-  attr_reader :name, :color, :price
-  attr_writer :price
-
-  def initialize(input_options)
-    @name = input_options[:name]
-    @color = input_options[:color]
-    @price = input_options[:price]
-  end
-
-end
-
-class Food < Item
-  def initialize(input_options)
-    super
-    @shelf_life = input_options[:shelf_life]
-  end
-end
+require './item.rb'
+require './food.rb'
 
 item_1 = Food.new(
                   name: 'Red pepper', 
@@ -45,7 +27,6 @@ item_4 = Item.new(
                   color: 'Black', 
                   price: 10
                   )
-
 p item_1
 p item_2
 p item_3
